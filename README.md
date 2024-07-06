@@ -25,23 +25,20 @@ Crea una CLI para comprobar la funcionalidad de la función memoize.
 Crea un front-end para comprobar la funcionalidad de la función memoize.
 
 ## [Recursos](https://github.com/SKRTEEEEEE/markdowns/)
-### Empezando
-Para ver las diferentes partes del proyecto, navega a las diferentes ramas del proyecto una vez clonado.
-_Puedes utilizar el comando `git clone https://github.com/Study-JavaScript/ej2.3.git`_
-#### Estructuras ramas
-##### `main`
-Rama principal del proyecto.
-##### [`test/cli`](https://github.com/Study-JavaScript/ej2.3/tree/test/cli)
-Rama con unicamente el test y uso de la función `debounce()`. Para dirigirte utiliza el siguiente comando en la carpeta principal:
+### [Empezando](https://github.com/SKRTEEEEEE/markdowns/blob/main/utils/how-start/ts-compiled_es.md)
+#### Realizar test
+Para iniciar los test de la aplicación, ejecuta:
+
 ```bash
-git checkout test/cli
-```
-##### [`app`](https://github.com/Study-JavaScript/ej2.3/tree/app)
-Rama con la utilización de la función debounce en el ejercicio 1.1. Para dirigirte utiliza el siguiente comando en la carpeta principal:
-```bash
-git checkout app
+npm test
 ```
 
+#### Iniciar el Servidor de Desarrollo
+Para iniciar el servidor de desarrollo de la aplicación Node.js y usarla en CLI, ejecuta:
+
+```bash
+node dist/cli
+```
 ## Contacto
 
 ### Agradecimientos
