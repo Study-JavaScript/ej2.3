@@ -28,14 +28,6 @@ Crea un front-end para comprobar la funcionalidad de la función memoize.
 
 ### [Empezando](https://github.com/SKRTEEEEEE/markdowns/blob/main/utils/how-start/ts-tw_es.md)
 
-
-#### Realizar test
-Para iniciar los test de la aplicación, ejecuta:
-
-```bash
-npm test
-```
-
 #### Compilación
 
 Para compilar los archivos, ejecuta:
