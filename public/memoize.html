@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon memoize App</title>
+  <link rel="stylesheet" href="output.css">
+  
+</head>
+<body>
+  <div class="flex h-full w-screen flex-col items-center justify-evenly bg-black sm:h-screen">
+    <div class="flex flex-col sm:flex-row items-center justify-between py-2 w-10/12">
+      <a href="/"
+        ><div class="h-12 w-28 rounded-md border border-white bg-gray-50 p-0.5 text-3xl">
+          🏡
+          <span class="absolute text-sm font-semibold"
+            >Back to <br />
+            menu</span
+          >
+        </div></a
+      >
+      
+      <h1 class="text-5xl font-bold mb-2 text-white">Función memoize</h1>
+      <a target="_blank" href="https://profile-skrt.vercel.app/"
+        ><div class="h-12 w-28 rounded-md border border-white bg-gray-50 p-0.5 text-3xl">
+          💁
+          <span class="absolute text-sm font-semibold"
+            >Info <br />
+            Creator</span
+          >
+        </div></a
+      >
+    </div>
+    <section class="max-w-10/12 relative mx-auto grid grid-cols-1 gap-1 rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-1 shadow-lg sm:max-h-screen sm:grid-cols-2">
+      <div class="flex flex-col justify-between space-y-2">
+        <article class="flex flex-1 rounded-md bg-white p-7">
+          <span class="w-[18rem]"
+            >En este apartado exploramos el uso de memoize, como podemos comprobar en el tiempo de espera de la petición. <br />
+            Al llamar al mismo grupo de pokemons, este se recupera mas rápido, ya que esa información a sido guardada en cache.</span
+          >
+        </article>
+        <article class="flex flex-1 justify-between rounded-md bg-white px-7 py-2">
+          <div class="flex flex-col">
+            <h2 class="mb-4 underline decoration-blue-300">Respuesta de la API</h2>
+            <div class="mb-4">
+              ⏳Ha tardado : <br />
+              <span id="timeCall"></span>
+            </div>
+            <div class="flex h-full flex-col items-center justify-start" id="ids">
+              Desde el <br />
+              nº <span id="idsFrom"></span> <br /><br />
+              Hasta el <br />
+              nº <span id="idsTo"></span>
+            </div>
+          </div>
+          <ul class="flex w-36 flex-col gap-0.5 text-center" id="pokemonList">
+            <!-- <li class="rounded-md border bg-gray-200 py-0.5 hover:bg-gray-100">poliwhirl</li> -->
+          </ul>
+        </article>
+      </div>
+      <div class="flex flex-col justify-between space-y-2">
+        <article class="flex-1 rounded-md bg-white px-7 pt-7">
+          <h2>Buscar Pokemons🐉 en la PokeDex🏐</h2>
+
+          <form class="mt-4 flex flex-col">
+            <span class="flex">
+              <input name="pageNumber" id="pageNumber" type="number" placeholder="Hacer peticion 🛜" class="rounded-l-lg bg-slate-700 px-4 py-2 text-slate-400 placeholder-slate-400 focus:bg-slate-800 focus:text-slate-300 focus:outline-none focus:ring-0" required />
+              <div class="group relative inline-flex">
+                <div class="animate-tilt absolute -inset-px rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg transition-all duration-1000 group-hover:-inset-1 group-hover:opacity-100 group-hover:duration-200"></div>
+                <button id="fetchPokemonButton" type="submit" class="font-pj text-md relative inline-flex items-center justify-center rounded-r-lg bg-gray-900 px-2 font-semibold text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">Buscar</button>
+              </div>
+            </span>
+            <p class="w-60 text-xs italic">Introduce un numero para buscar los 10 de ese bloque. Por ejemplo:</p>
+            <span class="text-end text-xs"
+              >0 = 1/10 <br />
+              3 = 31-40 <br />etc...</span
+            >
+          </form>
+        </article>
+        <article class="flex-1 rounded-md bg-white px-7 py-2">
+          <h2 class="mb-2 underline decoration-blue-200">Ultimas llamadas a la API</h2>
+          <ul class="flex flex-col items-center gap-1" id="callTimes">
+            <!-- <li class="flex w-4/5 justify-between text-xs"><span class="rounded-lg border px-2 py-0.5 hover:bg-gray-100">Llamada 1:</span> 101 ms</li> -->
+          </ul>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/memoize.js"></script>
+</body>
+</html>

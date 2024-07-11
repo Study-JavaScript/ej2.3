@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server debounce 1</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-black p-6 relative min-h-dvh sm:h-dvh sm:overflow-hidden">
+    <!-- Fondo con líneas futuristas -->
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-20 animate-[glow_2s_infinite]"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-green-500 to-transparent opacity-10 animate-[glow_3s_infinite]"></div>
+
+    <article class="text-white relative z-10">
+        <div class="flex justify-evenly">
+        <a href="/"><div class="text-3xl p-0.5 border border-white rounded-md w-28 h-12 sm:top-1 sm:absolute sm:left-4">🏡 <span class=" font-semibold absolute text-sm ">Back to <br> menu</span></div></a>
+        <a href="/todo-debounce"><div class="text-3xl p-0.5 border border-white rounded-md  w-28 h-12 sm:top-1 sm:absolute sm:right-4">➡️ <span class=" font-semibold absolute text-sm ">Next <br> lesson</span></div></a></div>
+        <h1 class="text-3xl font-bold text-center mt-2 mb-8">Todo List 'Wrong App'</h1>
+        <div class="mb-6 mx-2 sm:mx-6">
+            <p>👆 Click aquí, <a class="underline" href="https://github.com/SKRTEEEEEE/markdowns/blob/main/utils/learn-techs/backend/callback-lim.md" target="_blank">para obtener mas información sobre debounce</a> o <a class="underline" href="#">seguir este curso.</a></p>
+            <p class="text-xs"><i>Debounce Todo List 'Wrong App' Example: <br>En este ejemplo, podemos comprobar que al aplicar debounce en el servidor este no se ejecuta correctamente ya que acumula las peticiones y las ejecuta una vez se ha ejecutado la ultima (setTimeout clásico) <br>⚠️ Todas las acciones de esta aplicación tienen un debounce de 2 segundos. </i></p>
+        </div>
+    </article>
+    
+    <section id="taskForm" class="mx-2 sm:mx-6 mb-6 p-2 bg-red-50 border-2 border-red-300 rounded-md shadow-md shadow-violet-800 relative z-10">
+        <h2 class="text-2xl font-semibold mb-4">Add Task:</h2>
+        <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2">
+            <input type="text" id="taskInput" class="border w-full sm:w-max p-2 flex-grow" placeholder="Enter task description...">
+            <span>
+                <button onclick="addTask()" class="bg-blue-500 text-white px-4 py-2 rounded">Add Task</button>
+                <button onclick="deleteAllTasks()" class="bg-red-500 text-white px-4 py-2 rounded">Delete All Tasks</button>
+            </span>
+        </div>
+    </section>
+    <section id="taskList" class="mx-2 sm:mx-6 mb-6 p-2 bg-red-50 border-2 border-red-300 rounded-md shadow-sm shadow-violet-800 relative z-10">
+        <h2 class="text-2xl font-semibold mb-4">Tasks:</h2>
+        <ul id="tasks" class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            
+        </ul>
+    </section>
+
+    <script src="/js/todo-bad.js"></script>
+</body>
+</html>

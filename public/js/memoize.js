@@ -1,31 +1,31 @@
-// app.js (cliente)
+// const baseURL = 'http://localhost:4001';
+const baseURL = "https://app-callback-latest.onrender.com"
 
-const baseURL = 'http://localhost:4001';
 
 const callTimes = [];
 
-const fetchPokemons = async (pageNo) => {
-  try {
-    const response = await fetch(`${baseURL}/pokemon`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ pageNo }),
-    });
+// const fetchPokemons = async (pageNo) => {
+//   try {
+//     const response = await fetch(`${baseURL}/pokemon`, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ pageNo }),
+//     });
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok');
+//     }
 
-    const data = await response.json();
-    console.log('Pokémon data:', data);
-    return data;
-  } catch (error) {
-    console.error('Error fetching Pokémon:', error);
-    throw error;
-  }
-};
+//     const data = await response.json();
+//     console.log('Pokémon data:', data);
+//     return data;
+//   } catch (error) {
+//     console.error('Error fetching Pokémon:', error);
+//     throw error;
+//   }
+// };
 
 const debounceFetchPokemons = debounce(async (pageNo) => {
   try {

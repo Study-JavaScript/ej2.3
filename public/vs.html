@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Throttle vs Debounce App</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="flex min-h-screen flex-col items-center justify-evenly bg-black">
+  <section
+    class="mb-8 w-full rounded-lg bg-green-100 border-2 border-green-400 shadow-green-600  px-8 py-6 shadow-lg sm:w-11/12 md:w-5/6 lg:w-4/6">
+    <div class="flex flex-col sm:flex-row items-center justify-between mb-4">
+      <h1 class=" text-3xl font-semibold" tabindex="0">Throttle vs Debounce App</h1>
+      <span class="flex gap-2">
+        <a href="/">
+          <div class=" h-12 w-28 rounded-md border bg-blue-50 border-white p-0.5 text-3xl ">
+            🏡
+            <span class="absolute text-sm font-semibold">Back to <br />
+              menu</span>
+          </div>
+        </a>
+        <a href="/vs-wrong">
+          <div class="h-12 w-28 rounded-md border bg-blue-50 border-white p-0.5 text-3xl ">
+            ➡️
+            <span class="absolute text-sm font-semibold">Next <br />
+              lesson</span>
+          </div>
+        </a></span>
+    </div>
+
+    <p class="leading-relaxed" tabindex="0">
+      Comparativa de las funciones debounce() y throttle(), capturando el click del botón.
+    <p class="text-blue-950 text-base mt-2">👇 Click aquí, <a class="underline"
+        href="https://github.com/SKRTEEEEEE/markdowns/blob/main/utils/learn-techs/backend/callback-lim.md"
+        target="_blank">para obtener mas información</a> o <a class="underline" href="#">seguir este
+        curso.</a></p>
+    <br />
+    <i class="text-xs leading-[0]">Encontraremos una diferencia en el uso del cliente y del servidor (Wrong example vs
+      Client example), esto es porque en el servidor, se acumulan las peticiones y las deja en espera. Para solucionar
+      esto podríamos limpiar la petición cada vez que se llama de nuevo o, como en el ejemplo 'Server Good counts' hacer
+      debounce/throttle en el cliente y en el servidor.</i>
+    </p>
+  </section>
+
+  <div
+    class="flex w-full flex-col space-y-4 px-4 sm:w-11/12 sm:flex-row sm:space-x-4 sm:space-y-0 sm:px-0 md:w-5/6 lg:w-4/6">
+    <section class="w-full rounded-lg border border-blue-600 bg-gray-100 p-6 shadow-md sm:w-1/3">
+      <h2 class="mb-4 h-[50px] text-xl font-semibold" tabindex="0">Server Wrong Counts</h2>
+      <div class="mb-0 md:mb-2" tabindex="0">
+        <b class="text-base sm:text-xs md:text-base" aria-describedby="default-server-info">Default Server:</b>
+        <span id="default-wrong" class="ml-2 text-blue-600">0</span>
+        <p class="text-[0.6rem] italic" id="default-server-info">Without delay</p>
+      </div>
+      <div class="mb-0 md:mb-2" tabindex="0">
+        <b class="text-base sm:text-xs md:text-base" aria-describedby="debounce-server-info">Debounce Server:</b>
+        <span id="debounce-wrong" class="ml-2 text-blue-600">0</span>
+        <p class="text-[0.6rem] italic" id="debounce-server-info">2 sec delay (with Bugg)</p>
+      </div>
+      <div class="mb-0 md:mb-2" tabindex="0">
+        <b class="text-base sm:text-xs md:text-base" aria-describedby="throttle-server-info">Throttle Server:</b>
+        <span id="throttle-wrong" class="ml-2 text-blue-600">0</span>
+        <p class="text-[0.6rem] italic" id="throttle-server-info">2 sec delay (with Bugg)</p>
+      </div>
+      <button id="incrementWrongButton"
+        class="mt-4 rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 hover:shadow-md hover:shadow-blue-600 shadow-blue-400 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600">Increment
+        Counts</button>
+    </section>
+    <section class="w-full rounded-lg border border-blue-600 bg-gray-100 p-6 shadow-md sm:w-1/3">
+      <h2 class="mb-4 h-[50px] text-xl font-semibold" tabindex="0">Server Good Counts</h2>
+      <div class="mb-0 md:mb-2" tabindex="0">
+        <b class="text-base sm:text-xs md:text-base" aria-describedby="default-server-good-info">Default Server:</b>
+        <span id="default-full" class="ml-2 text-blue-600">0</span>
+        <p class="text-[0.6rem] italic" id="default-server-good-info">Without delay</p>
+      </div>
+      <div class="mb-0 md:mb-2" tabindex="0">
+        <b class="text-base sm:text-xs md:text-base" aria-describedby="debounce-server-good-info">Debounce Server:</b>
+        <span id="debounce-full" class="ml-2 text-blue-600">0</span>
+        <p class="text-[0.6rem] italic" id="debounce-server-good-info">4 sec delay (2 client + 2 server)</p>
+      </div>
+      <div class="mb-0 md:mb-2" tabindex="0">
+        <b class="text-base sm:text-xs md:text-base" aria-describedby="throttle-server-good-info">Throttle Server:</b>
+        <span id="throttle-full" class="ml-2 text-blue-600">0</span>
+        <p class="text-[0.6rem] italic" id="throttle-server-good-info">2 sec delay</p>
+      </div>
+      <button id="incrementFullButton"
+        class="mt-4 rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 hover:shadow-md hover:shadow-blue-600 shadow-blue-400 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600">Increment
+        Counts</button>
+    </section>
+
+    <section class="w-full rounded-lg border border-blue-600 bg-gray-100 p-6 shadow-md sm:w-1/3">
+      <h2 class="mb-4 h-[50px] text-xl font-semibold" tabindex="0">Client Counts</h2>
+      <div class="mb-0 md:mb-2" tabindex="0">
+        <b class="text-base sm:text-xs md:text-base" aria-describedby="default-client-info">Default Client:</b>
+        <span id="default-client" class="ml-2 text-blue-600">0</span>
+        <p class="text-[0.6rem] italic" id="default-client-info">Without delay</p>
+      </div>
+      <div class="mb-0 md:mb-2" tabindex="0">
+        <b class="text-base sm:text-xs md:text-base" aria-describedby="debounce-client-info">Debounce Client:</b>
+        <span id="debounce-client" class="ml-2 text-blue-600">0</span>
+        <p class="text-[0.6rem] italic" id="debounce-client-info">2 sec delay</p>
+      </div>
+      <div class="mb-0 md:mb-2" tabindex="0">
+        <b class="text-base sm:text-xs md:text-base" aria-describedby="throttle-client-info">Throttle Client:</b>
+        <span id="throttle-client" class="ml-2 text-blue-600">0</span>
+        <p class="text-[0.6rem] italic" id="throttle-client-info">2 sec delay</p>
+      </div>
+      <button id="incrementButtonClient"
+        class="mt-4 rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 hover:shadow-md hover:shadow-blue-600 shadow-blue-400 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600">Increment
+        Counts</button>
+    </section>
+  </div>
+
+  <script src="js/vs.js"></script>
+</body>
+
+</html>

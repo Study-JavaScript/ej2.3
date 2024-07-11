@@ -8,7 +8,7 @@
 </div>
 </a>
 
-Ejercicio practico 2.2, para el curso de [NodeJS](https://nodejs.org/en) de [ItAcademy](https://www.barcelonactiva.cat/es/itacademy).
+Pagina web creada a partir del ejercicio practico 2.2, para el curso de [NodeJS](https://nodejs.org/en) de [ItAcademy](https://www.barcelonactiva.cat/es/itacademy).
 
 
 ### Requerimientos académicos
