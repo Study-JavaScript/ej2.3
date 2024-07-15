@@ -44,11 +44,10 @@ const server = http.createServer((req, res) => {
     });
     req.on('end', async () => {
       try {
-        const { pageNo } = JSON.parse(body); // Parsear el número de página desde el cuerpo JSON
+        const { pageNo } = JSON.parse(body); 
         const limit = 10;
         const offset = pageNo * limit;
 
-        // Utilizar memoize para almacenar en caché los resultados
         const memoizedFetchPokemonData = memoize(fetchPokemonData);
 
         const startTime = Date.now();

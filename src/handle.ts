@@ -8,15 +8,13 @@ import { memoize } from "./utils/memoize";
 let offset = 0;
 const limit = 10;
 
-// Función para manejar la solicitud de Pokémon
 const handleFetch = async (req: http.IncomingMessage, res: http.ServerResponse) => {
   try {
-    // Verificar si req.url está definido
+    
     if (req.url) {
-      const pageNo = parseInt(req.url.split("=")[1], 10) || 0; // Parsear el número de página
+      const pageNo = parseInt(req.url.split("=")[1], 10) || 0;
       offset = pageNo * limit;
 
-      // Utilizar memoize para almacenar en caché los resultados
       const memoizedFetchPokemonData = memoize(fetchPokemonData);
 
       const startTime = Date.now();
@@ -41,5 +39,4 @@ const handleFetch = async (req: http.IncomingMessage, res: http.ServerResponse) 
     res.end(JSON.stringify({ error: "Failed to fetch Pokémon data" }));
   }
 };
-// Aplicar debounce a la función de manejo de la solicitud
 export const debouncedFetch = debounceHandler(handleFetch, 500);
