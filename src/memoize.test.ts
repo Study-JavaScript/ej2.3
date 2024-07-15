@@ -1,5 +1,3 @@
-// Importar la función memoize si está en otro archivo
-
 import { memoize } from "./memoize";
 
 
@@ -62,7 +60,7 @@ describe('memoize', () => {
 
     expect(obj.getValue()).toBe(2);
     obj.value = 3;
-    expect(obj.getValue()).toBe(2); // Should return cached value
+    expect(obj.getValue()).toBe(2); 
   });
 
   it('should handle functions that return undefined correctly', () => {
